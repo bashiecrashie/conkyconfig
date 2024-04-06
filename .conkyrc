@@ -1,0 +1,86 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+-- Try this (remove the `--`):
+--
+--   print("Loading Conky config")
+--
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    alignment = none,
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    font = 'Fira Code Retina',
+    gap_x = 2000,
+    gap_y = 360,
+    minimum_height = 5,
+    minimum_width = 5,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    use_xft = true,
+}
+
+poseidon = 000000
+
+conky.text = [[
+${image /home/mark/.conkyimages/linux_mint.png -s 90x70}
+
+
+${color white}${font Fira Code:style=Bold:size=30}$time${font Fira Code:style=Retina:size=10}
+${exec uname -a | awk '{print $1" "$2" "$3" "$4}'}
+
+${color green}NETWORK${hr 5}${color white}
+${font Fira Code:style=Retina:size=10}Local IP:${font Fira Code:style=Bold:size=10}${addr enp3s0}
+${font Fira Code:style=Retina:size=10}Gateway IP:${font Fira Code:style=Bold:size=10}${gw_ip}
+${font Fira Code:style=Retina:size=10}Gateway interface:${font Fira Code:style=Bold:size=10}${gw_iface}
+${font Fira Code:style=Retina:size=10}Network Upspeed/Download: ${font Fira Code:style=Bold:size=10}${upspeedf enp3s0}KiB/S ${downspeedf enp3s0}KiB/S
+${color white}${font Fira Code:style=Retina:size=10}Network download graph:
+${downspeedgraph enp3s0 50,200 FF0000 00FF00 -t -l}
+${color green}SYSTEM${hr 5}${color white}
+${font Fira Code:style=Retina:size=10}Uptime:${uptime} User:${user_names} User number:${user_number}
+${font Fira Code:style=Retina:size=10}RAM:${mem}/${memmax} RAM graph:${membar 5,100}
+${font Fira Code:style=Retina:size=10}SWAP:${swap}/${swapfree} SWAP graph:${swapbar 5,100}
+${font Fira Code:style=Retina:size=10}Disk usage:${fs_used /}/${fs_size /} ${fs_bar 6 /}
+${font Fira Code:style=Retine:size=10}Total processes:${processes}
+${font Fira Code:style=Retine:size=10}Running threads:${running_threads}
+${font Fira Code:style=Retina:size=10}CPU1 usage%:${cpu cpu1} CPU(graph): ${cpubar cpu1 5,100}
+${font Fira Code:style=Retina:size=10}CPU2 usage%:${cpu cpu2} CPU(graph): ${cpubar cpu2 5,100}
+${font Fira Code:style=Retina:size=10}CPU3 usage%:${cpu cpu3} CPU(graph): ${cpubar cpu3 5,100}
+${font Fira Code:style=Retina:size=10}CPU4 usage%:${cpu cpu4} CPU(graph): ${cpubar cpu4 5,100}
+${font Fira Code:style=Retina:size=10}CPU5 usage%:${cpu cpu5} CPU(graph): ${cpubar cpu5 5,100}
+${font Fira Code:style=Retina:size=10}CPU6 usage%:${cpu cpu6} CPU(graph): ${cpubar cpu6 5,100}
+${font Fira Code:style=Retina:size=10}CPU7 usage%:${cpu cpu7} CPU(graph): ${cpubar cpu7 5,100}
+${font Fira Code:style=Retina:size=10}CPU8 usage%:${cpu cpu8} CPU(graph): ${cpubar cpu8 5,100}
+${font Fira Code:style=Retina:size=10}CPU9 usage%:${cpu cpu9} CPU(graph): ${cpubar cpu9 5,100}
+${font Fira Code:style=Retina:size=10}CPU10 usage%:${cpu cpu10} CPU(graph): ${cpubar cpu10 5,100}
+${font Fira Code:style=Retina:size=10}CPU11 usage%:${cpu cpu11} CPU(graph): ${cpubar cpu11 5,100}
+${font Fira Code:style=Retina:size=10}CPU12 usage%:${cpu cpu12} CPU(graph): ${cpubar cpu12 5,100}
+]]
