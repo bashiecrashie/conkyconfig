@@ -29,8 +29,8 @@ conky.config = {
     draw_shades = false,
     extra_newline = false,
     font = 'Fira Code Bold:size=40',
-    gap_x = 60,
-    gap_y = 60,
+    gap_x = -560,
+    gap_y = 30,
     minimum_height = 5,
     minimum_width = 5,
     net_avg_samples = 2,
@@ -41,8 +41,10 @@ conky.config = {
     out_to_wayland = false,
     out_to_x = true,
     own_window = true,
+    own_window_transparent = true,
     own_window_class = 'Conky',
-    own_window_type = 'override',
+    own_window_type = 'Conky',
+    own_window_argb_visual = true,
     own_window_hints = 'undecorated,sticky,below,skip_taskbar,skip_pager',
     show_graph_range = false,
     show_graph_scale = false,
@@ -57,10 +59,10 @@ conky.config = {
 conky.text = [[
 
 ${color E5F1ED}
-${font Fira Code Bold:pixelsize=80}${exec date | awk '{print $4}'}${font}
-${font Fira Code Retina:pixelsize=30}${exec date | awk '{print $1 " " $2 " "  $3}'}
+${font Fira Code Bold:pixelsize=100}${time %I:%M:%S}${font Fira Code Retina:pixelsize=30}
+       ${time %d.%m.%Y %A}
 ${hr 5}
-${font}
+
 
 
 ]]
